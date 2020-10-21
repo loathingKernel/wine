@@ -174,7 +174,7 @@ case "$host_cpu" in
   x86_64)          HOST_ARCH=x86_64 ;;
 esac
 m4_set_add_all([_AC_SUBST_VARS],[HOST_ARCH]m4_foreach([cpu],[aarch64,arm,arm64ec,i386,x86_64],
-                                [m4_foreach([var],[CC,CFLAGS,EXTRACFLAGS,LDFLAGS,DEBUG,TARGET,STRIP,DELAYLOADFLAG,DISABLED_SUBDIRS],[,cpu[_]var])]))
+                                [m4_foreach([var],[CC,CFLAGS,EXTRACFLAGS,CXXFLAGS,LDFLAGS,DEBUG,TARGET,STRIP,DELAYLOADFLAG,DISABLED_SUBDIRS],[,cpu[_]var])]))
 
 case $host_os in
   darwin*)
