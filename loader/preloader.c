@@ -89,7 +89,9 @@
 #include "wine/asm.h"
 #include "main.h"
 
+#if !defined(__LLD_LTO__)
 #pragma GCC visibility push(hidden)
+#endif
 
 /* ELF definitions */
 #define ELF_PREFERRED_ADDRESS(loader, maplength, mapstartpref) (mapstartpref)
@@ -1523,6 +1525,8 @@ void* wld_start( void **stack )
     return (void *)ld_so_map.l_entry;
 }
 
+#if !defined(__LLD_LTO__)
 #pragma GCC visibility pop
+#endif
 
 #endif /* __linux__ */
